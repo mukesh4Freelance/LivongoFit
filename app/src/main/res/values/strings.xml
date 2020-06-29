@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LivongoFit</string>
+    <string name="tap_for_sorting">Tap for Sorting</string>
+    <string name="internet_error">Kindly check your internet connection.</string>
+</resources>
