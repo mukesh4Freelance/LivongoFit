@@ -21,7 +21,6 @@ import com.jinxtris.ram.livongofit.model.StepItem
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import java.util.concurrent.TimeUnit
-import kotlin.collections.ArrayList
 
 
 enum class FitActionRequestCode {
@@ -30,7 +29,8 @@ enum class FitActionRequestCode {
 
 const val TAG = "MainActivity"
 
-class MainActivity : AppCompatActivity(), View.OnClickListener, ConnectivityReceiver.ConnectivityReceiverListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener,
+    ConnectivityReceiver.ConnectivityReceiverListener {
     private var totalCount: Int = 0
     private var lastDay = ""
     private var currentDay = ""
@@ -230,6 +230,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ConnectivityRece
         }
     }
 
+    /**
+     * parsing data set value in list. Set date and total count in model class list
+     * */
     private fun parseDataSet(dataSet: DataSet) {
         for (dp in dataSet.dataPoints) {
             currentDay = dp.getStartDayString()
